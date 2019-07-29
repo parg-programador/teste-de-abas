@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Teste de Abas</title>
+</head>
+<body>
+    <h2>Abas</h2>
+    <ul>
+        <li><a href="tab1.html" target="_blank">Aba 1</a></li>
+        <li><a href="tab2.html" target="_blank">Aba 2</a></li>
+        <li><a href="tab3.html" target="_blank">Aba 3</a></li>
+    </ul>
+    <h2>Procedimentos</h2>
+    <button type="button" onclick="abrirAbas();">Abrir Abas</button>
+    <button type="button" onclick="fecharAbas();">Fechar Abas</button>
+    <button type="button" onclick="manterAbas();">Manter Abas</button>
+    <hr/>
+    <button type="button" onclick="fecharAbas('1');">Fechar Aba 1</button>
+    <button type="button" onclick="fecharAbas('2');">Fechar Aba 2</button>
+    <button type="button" onclick="fecharAbas('3');">Fechar Aba 3</button>
+    <script src="cookie.js"></script>
+    <script>
+        function abrirAbas() {
+            function open(i) {
+                setTimeout(function() {window.open('tab' + i.toString() + '.html');}, i * 250);
+            }
+            for (var i = 1; i <= 3; i++) {
+                open(i);
+            }
+        }
+        function fecharAbas(id = 'true') {
+            Cookies.set('fechar', id);
+        }
+        function manterAbas() {
+            Cookies.set('fechar', '');
+        }
+    </script>
+</body>
+</html>

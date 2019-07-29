@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Aba 1</title>
+</head>
+
+<body>
+    <h1>Aba 1</h1>
+    <script src="cookie.js"></script>
+    <script>
+        setInterval(function () {
+            if (Cookies.get('fechar') !== undefined && (Cookies.get('fechar') === 'true') || Cookies.get('fechar') === '1') {
+                window.close();
+            }
+        }, 100);
+    </script>
+</body>
+
+</html>
